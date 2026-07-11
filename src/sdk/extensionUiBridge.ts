@@ -1,8 +1,8 @@
 import type { Theme } from '@earendil-works/pi-coding-agent';
 import type { ExtensionUIContext, ExtensionUIDialogOptions } from '@earendil-works/pi-coding-agent';
 import { createCancellingExtensionUi, type ExtensionCustomUiFactory, type ExtensionCustomUiOptions, type ExtensionUi } from '../extensionUi/types';
+import { taurenTheme } from '../extensionUi/customUiHost';
 
-const emptyTheme = {} as Theme;
 
 export type SdkExtensionUiOptions = {
   autocompleteRegistry?: { add(factory: Parameters<ExtensionUIContext['addAutocompleteProvider']>[0]): void };
@@ -67,7 +67,7 @@ export function createSdkExtensionUiContext(ui?: ExtensionUi, options: SdkExtens
       return undefined;
     },
     get theme() {
-      return emptyTheme;
+      return taurenTheme as Theme;
     },
     getAllThemes() {
       return [];
