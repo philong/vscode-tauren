@@ -406,7 +406,8 @@ export const messageStyles = /* css */ `    .tauren-transcript-search {
     }
 
     .message--thinking .message__body {
-      color: color-mix(in srgb, var(--vscode-descriptionForeground) 94%, #000 6%);
+      color: var(--vscode-disabledForeground);
+      font-style: italic;
     }
 
     .message--error .message__body {
